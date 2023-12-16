@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <a href="{% url 'form2' %}">form2</a>
+    <a href="{% url 'form3' %}">form3</a>
+    <a href="{% url 'list' %}">LIST</a>
+      
+    {% block content %}
+<h1>phoyography</h1>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam in, dicta ad sunt quae porro asperiores minima! Quas illum unde explicabo nesciunt error, quibusdam, vel animi consequuntur commodi fuga deserunt?</p>
+<a href="{% url 'next' %}">next page</a>
+
+{% endblock %}
+</body>
+</html>

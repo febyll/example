@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <!-- The secret is toggle .animate class in button.button to trigger the animations and using gradients to animate the "border" of the submit button! -->
+    {% block content %}
+<div class="container">
+    <button class="restart">Send again! 🔁</button>
+    <form class="contactform" action="" method="post">
+    {% csrf_token %}
+      <input  type="text" placeholder="Enter your name" name="empid">
+      <input type="text" placeholder="Enter your email" name="empname">
+      <input type="text" placeholder="Enter your password" name="designation">
+      <input type="text" placeholder="Enter your password again" name="salary">    <button class="submit">
+    
+        submit
+       </button>
+    </form>
+
+  </div>
+  {% endblock %}
+  <script>
+    const submitButton = document.querySelector('.button');
+const restartButton = document.querySelector('.restart');
+const toggleAnimate = () => submitButton.classList.toggle('animate');
+
+submitButton.addEventListener('click', toggleAnimate);
+restartButton.addEventListener('click', toggleAnimate);
+  </script>
+</body>
+</html>
